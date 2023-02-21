@@ -1,5 +1,6 @@
 import React from 'react';
 import './styleNav.css';
+import CartWidget from '../CartWidget/CartWidget';
 
 export const NavBar = () => {
     return (
@@ -10,6 +11,9 @@ export const NavBar = () => {
                 </div>
                 <div className='nav_title'>
                     <h1>MotoSafe</h1>
+                </div>
+                <div className='CartWidget'>
+                    <CartWidget />
                 </div>
             </nav>
         
