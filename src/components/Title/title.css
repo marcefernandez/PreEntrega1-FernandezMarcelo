@@ -1,0 +1,14 @@
+h1{
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:red;
+    font-size: 3rem;
+    margin-left: 200px;
+    margin-top: -90px;
+}
+
+@media screen and (max-width: 750px) {
+    h1{
+        display: none;        
+    }
+}
