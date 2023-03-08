@@ -1,0 +1,58 @@
+.nav-bar {
+    background-image: url("https://www.publicdomainpictures.net/pictures/150000/nahled/banner-header-tapete-1452531737Jr0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 10px 15px;
+    border-bottom: 2px solid;
+    justify-content: space-between;
+  
+    .left {
+      display: flex;
+      align-items: center;
+      
+      h1 {
+        color: white;
+        text-decoration: none;
+      }
+  
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: auto;
+        height: 50px;
+        display: flex;
+        align-items:flex-end;
+  
+        li {
+          display: flex;
+          margin-right: 20px;
+  
+          a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  
+    .right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-evenly;
+    }
+  }
+  @media screen and (max-width:450px) {
+    .nav-bar {
+      display: block;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu {
+      display: block;
+    }
+  }

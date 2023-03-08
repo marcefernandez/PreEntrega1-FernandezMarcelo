@@ -1,14 +1,53 @@
-import './App.css';
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
+// import './App.css';
+// import ItemListContainer from './components/ItemListContainer';
+// import NavBar from './components/NavBar';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// function App() {
+//   return (
+//     <>
+//       <NavBar />
+//       <ItemListContainer texto='MotoSafe' />
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+
+import NavBar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Prueba from "./pages/Prueba";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <ItemListContainer texto='MotoSafe' />
-    </>
+    <div className="container">
+      <BrowserRouter>
+        <NavBar />
+
+        <Routes>
+          <Route
+            path="/"
+            element={<ItemListContainer className="title-body" greeting={"Bienvenidos"} />}
+          />
+          {/* URL segments */}
+          <Route path="/detalle/:idUser" element={<ItemDetailContainer />} />
+          <Route
+            path="/category/:idCategory"
+            element={<ItemListContainer greeting={"Bienvenidos"} />}
+          />
+
+          <Route path="/prueba" element={<Prueba />} />
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -1,10 +1,27 @@
-import React from 'react';
-import Title from '../Title';
+import "./styles.scss";
+import { useState, useEffect } from "react";
+import ItemList from "../ItemList";
 
-export const ItemListContainer = ({texto}) => {
-    return (
-        <Title greeting={texto} />
-    );
+function ItemListContainer({ greeting }) {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://reqres.in/api/users")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        console.log("json", json);
+        setUsers(json.data);
+      });
+  }, []);
+
+  return (
+    <>
+      <h2>{greeting}</h2>
+      <ItemList users={users} />
+    </>
+  );
 }
 
 export default ItemListContainer;
